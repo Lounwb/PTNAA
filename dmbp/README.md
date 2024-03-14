@@ -51,3 +51,6 @@ Run the following command for example:
 python batch_process.py --ori_path ../dataset/images/ --adv_path ../adv/PTNAA/
 ```
 
+And you will get an image like this in `results/des/`:
+
+![](example.png)

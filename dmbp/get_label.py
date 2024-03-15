@@ -16,15 +16,10 @@ preprocess = transforms.Compose([
     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
 ])
 
-# 图像文件夹路径
-# image_folder = 'E:/学校材料/保研/科研/实验/FIA/dataset/images'
-# image_folder = '/home/qqq/data/lty/FIA/adv/PTNAAPIDI/res-v2'
-image_folder = '/home/qqq/data/lty/FIA/dataset/images'
+image_folder = './dataset/images'
 
-# 分类结果保存文件路径
 output_file = 'classification_results.txt'
 
-# 遍历文件夹中的图像文件
 with open(output_file, 'w') as f:
     for filename in os.listdir(image_folder):
         if filename.endswith('.jpg') or filename.endswith('.png'):
@@ -33,13 +28,11 @@ with open(output_file, 'w') as f:
             img_tensor = preprocess(img)
             img_tensor = torch.unsqueeze(img_tensor, 0)
 
-            # 使用模型进行预测
             with torch.no_grad():
                 output = model(img_tensor)
                 _, predicted_idx = torch.max(output, 1)
                 label = labels[predicted_idx.item()].split(":")[0].strip()
 
-            # 写入分类结果到文件
             f.write(f"{filename}: {label}\n")
 
 print("Save success!")

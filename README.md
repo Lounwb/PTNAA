@@ -4,7 +4,7 @@ This repository contains the code for the paper: [Improving the Transferability 
 
 **The paper will be released soon.**
 
-![path](assets\path.png)
+![path](assets/path.png)
 
 ## Requirements
 

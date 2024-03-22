@@ -1,8 +1,10 @@
 # PTNAA: Neuron-based Attribution Attack with Path Tuning
 
-This repository contains the code for the paper: [Improving the Transferability of Adversarial Examples with Path Tuning]()
+This repository contains the code for the paper: [Improving the Transferability of Adversarial Examples with Path Tuning](). 
 
-![](./archi.png)
+**The paper will be released soon.**
+
+![path](assets\path.png)
 
 ## Requirements
 
@@ -69,25 +71,25 @@ Different network tensorflow implementations are saved here.
 
 - PTNAA
 
-```
-python PTNAA.py --model_name inception_v3 --attack_method NAA --layer_name InceptionV3/InceptionV3/Mixed_5b/concat --path B_spline --ens 30 --output_dir ./adv/PTNAA/
+```bash
+python PTNAA.py --model_name inception_v3 --attack_method PTNAA --path bezier_2nd --layer_name InceptionV3/InceptionV3/Mixed_5b/concat --path B_spline --ens 30 --output_dir ./adv/PTNAA/
 ```
 
 - PTNAA-PD
 
-```
-python PTNAA.py --model_name inception_v3 --attack_method NAAPIDI --layer_name InceptionV3/InceptionV3/Mixed_5b/concat --path B_spline --ens 30 --amplification_factor 2.5 --gamma 0.5 --Pkern_size 3 --prob 0.7 --output_dir ./adv/PTNAAPIDI/
+```bash
+python PTNAA.py --model_name inception_v3 --attack_method NAAPIDI --path bezier_2nd --layer_name InceptionV3/InceptionV3/Mixed_5b/concat --path B_spline --ens 30 --amplification_factor 2.5 --gamma 0.5 --Pkern_size 3 --prob 0.7 --output_dir ./adv/PTNAAPIDI/
 ```
 
 - PIM:
 
-```
+```bash
 python PTNAA.py --model_name inception_v3 --attack_method PIM --amplification_factor 2.5 --gamma 0.5 --Pkern_size 3 --output_dir ./adv/PIM/
 ```
 
 - NRDM
 
-```
+```bash
 python attacks.py --model_name inception_v3 --attack_method NRDM --layer_name InceptionV3/InceptionV3/Mixed_5b/concat --output_dir ./adv/NRDM/
 ```
 
@@ -95,8 +97,8 @@ Attack methods have different parameter setting for different source models, and
 
 ##### Evaluate the attack success rate
 
-```
-python verify.py --ori_path ./dataset/images/ --adv_path ./adv/NAA/ 
+```bash
+python verify.py --ori_path ./dataset/images/ --adv_path ./adv/PTNAA/ 
 ```
 
 ## Citing this work

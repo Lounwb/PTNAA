@@ -1,8 +1,6 @@
 # PTNAA: Neuron-based Attribution Attack with Path Tuning
 
-This repository contains the code for the paper: [Improving the Transferability of Adversarial Examples with Path Tuning](). 
-
-**The paper will be released soon.**
+This repository contains the code for the paper: [Improving the Transferability of Adversarial Examples with Path Tuning](https://link.springer.com/article/10.1007/s10489-024-05820-4). 
 
 ![path](assets/path.png)
 
@@ -104,6 +102,25 @@ python verify.py --ori_path ./dataset/images/ --adv_path ./adv/PTNAA/
 ## Citing this work
 
 If you find this work is useful in your research, please consider citing:
+
+```tex
+@Article{Li2024,
+author={Li, Tianyu
+and Li, Xiaoyu
+and Ke, Wuping
+and Tian, Xuwei
+and Zheng, Desheng
+and Lu, Chao},
+title={Improving the transferability of adversarial examples with path tuning},
+journal={Applied Intelligence},
+year={2024},
+month={Sep},
+day={11},
+issn={1573-7497},
+doi={10.1007/s10489-024-05820-4},
+url={https://doi.org/10.1007/s10489-024-05820-4}
+}
+```
 
 ## Acknowledgments
 
